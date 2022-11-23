@@ -1,7 +1,7 @@
 {
   "segments": [
     {
-      "display_name": "prophecy-testing-up2",
+      "display_name": "demo-testing-up2",
       "transport_zone_path": "Overlay-TZ",
       "connectivity_path": "/infra/tier-1s/Tier-1Uplink2",
       "subnets": [
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "display_name": "prophecy-testing-up3",
+      "display_name": "demo-testing-up3",
       "transport_zone_path": "Overlay-TZ",
       "connectivity_path": "/infra/tier-1s/Tier-1Uplink3",
       "subnets": [
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "display_name": "prophecy-testing-up4",
+      "display_name": "demo-testing-up4",
       "transport_zone_path": "Overlay-TZ",
       "connectivity_path": "/infra/tier-1s/Tier-1Uplink4",
       "subnets": [
