@@ -1,0 +1,272 @@
+{
+    "tier0s": [
+        {
+            "ha_mode": "ACTIVE_STANDBY",
+            "failover_mode": "NON_PREEMPTIVE",
+            "default_rule_logging": false,
+            "disable_firewall": false,
+            "resource_type": "Tier0",
+            "id": "VRF-Uplink2",
+            "display_name": "VRF-Uplink2",
+            "vrf_config": {
+                "tier0_path": ""
+            }
+        },
+        {
+            "ha_mode": "ACTIVE_STANDBY",
+            "failover_mode": "NON_PREEMPTIVE",
+            "default_rule_logging": false,
+            "disable_firewall": false,
+            "resource_type": "Tier0",
+            "id": "VRF-Uplink3",
+            "display_name": "VRF-Uplink3",
+            "vrf_config": {
+                "tier0_path": ""
+            }
+        },
+        {
+            "ha_mode": "ACTIVE_STANDBY",
+            "failover_mode": "NON_PREEMPTIVE",
+            "default_rule_logging": false,
+            "disable_firewall": false,
+            "resource_type": "Tier0",
+            "id": "VRF-Uplink4",
+            "display_name": "VRF-Uplink4",
+            "vrf_config": {
+                "tier0_path": ""
+            }
+        }
+    ],
+    "interfaces": [
+        {
+            "id": "NSX-Edge-VRF-Uplink2-1",
+            "display_name": "NSX-Edge-VRF-Uplink2-1",
+            "edge_path": "EDGE1_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink2",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.3"
+                    ],
+                    "prefix_len": 25
+                }
+            ],
+            "t0_id": "VRF-Uplink2"
+        },
+        {
+            "id": "NSX-Edge-VRF-Uplink2-2",
+            "display_name": "NSX-Edge-VRF-Uplink2-2",
+            "edge_path": "EDGE2_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink2",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.4"
+                    ],
+                    "prefix_len": 25
+                }
+            ],
+            "t0_id": "VRF-Uplink2"
+        },
+        {
+            "id": "NSX-Edge-VRF-Uplink3-1",
+            "display_name": "NSX-Edge-VRF-Uplink3-1",
+            "edge_path": "EDGE1_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink3",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.3"
+                    ],
+                    "prefix_len": 29
+                }
+            ],
+            "t0_id": "VRF-Uplink3"
+        },
+        {
+            "id": "NSX-Edge-VRF-Uplink3-2",
+            "display_name": "NSX-Edge-VRF-Uplink3-2",
+            "edge_path": "EDGE2_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink3",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.4"
+                    ],
+                    "prefix_len": 29
+                }
+            ],
+            "t0_id": "VRF-Uplink3"
+        },
+        {
+            "id": "NSX-Edge-VRF-Uplink4-1",
+            "display_name": "NSX-Edge-VRF-Uplink4-1",
+            "edge_path": "EDGE1_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink4",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.11"
+                    ],
+                    "prefix_len": 29
+                }
+            ],
+            "t0_id": "VRF-Uplink4"
+        },
+        {
+            "id": "NSX-Edge-VRF-Uplink4-2",
+            "display_name": "NSX-Edge-VRF-Uplink4-2",
+            "edge_path": "EDGE2_PATH",
+            "segment_path": "/infra/segments/NSX-Edge-VCN-Segment-Uplink4",
+            "type": "EXTERNAL",
+            "multicast": {
+                "enabled": false
+            },
+            "resource_type": "Tier0Interface",
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "x.x.x.12"
+                    ],
+                    "prefix_len": 29
+                }
+            ],
+            "t0_id": "VRF-Uplink4"
+        }
+
+    ],
+    "localeservices": [
+        {
+            "route_redistribution_config": {
+                "bgp_enabled": true,
+                "redistribution_rules": [
+                    {
+                        "name": "redist",
+                        "route_redistribution_types": [
+                            "TIER0_CONNECTED",
+                            "TIER1_NAT",
+                            "TIER1_CONNECTED",
+                            "TIER0_STATIC"
+                        ]
+                    }
+                ]
+            },
+            "edge_cluster_path": "",
+            "resource_type": "LocaleServices",
+            "id": "locale-service-1",
+            "display_name": "locale-service-1"
+        }
+    ],
+    "havip": [
+        {
+            "t0_id": "VRF-Uplink2",
+            "ha_vip_configs": [
+                {
+                    "vip_subnets": [
+                        {
+                            "ip_addresses": [
+                                "x.x.x.2"
+                            ],
+                            "prefix_len": 25
+                        }
+                    ],
+                    "external_interface_paths": ["test"]
+                }
+            ]
+        },
+        {
+            "t0_id": "VRF-Uplink3",
+            "ha_vip_configs": [
+                {
+                    "vip_subnets": [
+                        {
+                            "ip_addresses": [
+                                "x.x.x.2"
+                            ],
+                            "prefix_len": 29
+                        }
+                    ],
+                    "external_interface_paths": []
+                }
+            ]
+        },
+        {
+            "t0_id": "VRF-Uplink4",
+            "ha_vip_configs": [
+                {
+                    "vip_subnets": [
+                        {
+                            "ip_addresses": [
+                                "x.x.x.10"
+                            ],
+                            "prefix_len": 29
+                        }
+                    ],
+                    "external_interface_paths": []
+                }
+            ]
+        }
+    ],
+    "static_routes":[
+         {
+            "t0_id": "VRF-Uplink2",
+            "network": "0.0.0.0/0",
+            "next_hops": [
+                {
+                "ip_address": "x.x.x.1",
+                "admin_distance": 1
+    
+                }
+            ]
+        },
+        {
+            "t0_id": "VRF-Uplink3",
+            "network": "0.0.0.0/0",
+            "next_hops": [
+                {
+                "ip_address": "x.x.x.1",
+                "admin_distance": 1
+    
+                }
+            ]
+        },
+        {
+            "t0_id": "VRF-Uplink4",
+            "network": "0.0.0.0/0",
+            "next_hops": [
+                {
+                "ip_address": "x.x.x.9",
+                "admin_distance": 1
+    
+                }
+            ]
+        }
+    ]
+
+
+}

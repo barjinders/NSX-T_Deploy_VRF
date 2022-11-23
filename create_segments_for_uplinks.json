@@ -1,0 +1,37 @@
+{
+	"segments": [
+    {
+      "display_name": "NSX-Edge-VCN-Segment-Uplink2",
+      "id": "NSX-Edge-VCN-Segment-Uplink2",
+      "transport_zone_path": "VLAN-TZ-VRF",
+      "vlan_ids": [
+        "xxxxxx"
+      ],
+      "advanced_config": {
+        "connectivity": "ON"
+      }
+    },
+    {
+      "display_name": "NSX-Edge-VCN-Segment-Uplink3",
+      "id": "NSX-Edge-VCN-Segment-Uplink3",
+      "transport_zone_path": "VLAN-TZ-VRF",
+      "vlan_ids": [
+        "XXXXXXX"
+      ],
+      "advanced_config": {
+        "connectivity": "ON"
+      }
+    },
+    {
+      "display_name": "NSX-Edge-VCN-Segment-Uplink4",
+      "id": "NSX-Edge-VCN-Segment-Uplink4",
+      "transport_zone_path": "VLAN-TZ-VRF",
+      "vlan_ids": [
+        "XXXXXXX"
+      ],
+      "advanced_config": {
+        "connectivity": "ON"
+      }
+    }
+	]
+}

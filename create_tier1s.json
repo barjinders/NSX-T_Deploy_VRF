@@ -1,0 +1,28 @@
+{
+    "tier-1s": [
+        {
+            "display_name": "Tier-1Uplink2",
+            "t0_id": "VRF-Uplink2"
+        },
+        {
+            "display_name": "Tier-1Uplink3",
+            "t0_id": "VRF-Uplink3"
+        },
+        {
+            "display_name": "Tier-1Uplink4",
+            "t0_id": "VRF-Uplink4"
+        }
+    ],
+    "route_advertisment": {
+        "route_advertisement_types": [
+            "TIER1_STATIC_ROUTES",
+            "TIER1_CONNECTED",
+            "TIER1_NAT",
+            "TIER1_LB_VIP",
+            "TIER1_LB_SNAT",
+            "TIER1_DNS_FORWARDER_IP",
+            "TIER1_IPSEC_LOCAL_ENDPOINT"
+        ]
+    },
+    "dhcp_profile":"Workload-DHCP-Server"
+}

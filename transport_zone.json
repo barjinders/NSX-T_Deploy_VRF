@@ -1,0 +1,8 @@
+{
+  "transport_zones": [
+    {
+      "display_name": "VLAN-TZ-VRF",
+      "transport_type": "VLAN"
+    }
+  ]
+}

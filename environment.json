@@ -1,0 +1,6 @@
+{
+    "nsx_ip" : "x.x.x.x",
+    "nsx_port" : 443,
+    "basic_auth":"Basic YXXXXXXXXX"
+
+}
