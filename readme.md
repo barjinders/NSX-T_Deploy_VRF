@@ -4,7 +4,7 @@ Populate the below files before running the script.
 
 transport_zone.json: Update the display name key with the target transport zone name.
 
-environment.json: Update this file with the NSX IP , port is default 443 but can be updated if a custom port is in use. For auth the script expects a base64 encoded string of username: password. e.g. base64 encoded string on admin:VMware is YWRtaW46Vk13YXJl
+environment.json: Update this file with the NSX IP , port is default 443 but can be updated if a custom port is in use. For auth key in the username and password. The username and password gets converted into a base64 encoded stringin the code. 
 
 create_segments_for_uplinks.json: Each VRF gateway is connected with a VLAN-backed segment for the north-south traffic. Update the name, id , transport zone name mentioned in the transport_zone.json file and the VLAN ID. 
 

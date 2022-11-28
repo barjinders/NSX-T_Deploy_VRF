@@ -9,6 +9,7 @@ import json
 import time
 import requests
 import warnings
+import base64
 
 
 
@@ -197,7 +198,6 @@ def create_segments(paramfile):
                     print("Error creating segment(s)")
     print(banner("Creating segments end"))
     return True 
-
     
 def delete_segments(paramfile):
     print(banner("Delete Segments"))
@@ -540,22 +540,33 @@ def build_environment():
     update_tier1()
     create_segments("create_l3_segments.json")
 
-
 def delete_environemnt():
     #delete_transport_zone()
     #delete_segments("create_segments_for_uplinks.json")
     delete_segments("create_l3_segments.json")
 
-
-
+#Delete environment is a future capability
 def main():
     build_environment()
     #delete_environemnt()
     
 
-    
-
-    
+def base64encode():
+    try:
+        print(banner("Converting the credentials to base64 encoded string"))
+        conf = load_json("environment.json")
+        uname = conf["nsx_username"]
+        pwd = conf["nsx_password"]
+        cred_string = uname+":"+pwd
+        message = cred_string
+        message_bytes = message.encode('ascii')
+        base64_bytes = base64.b64encode(message_bytes)
+        base64_message = base64_bytes.decode('ascii')
+        return ("Basic "+base64_message)
+    except Exception as e:
+        print("Error enconding the credentials: "+ str(e))
+        raise
+      
 
 config = load_json("environment.json")
 nsx_ip = config["nsx_ip"]
@@ -570,7 +581,7 @@ warnings.filterwarnings("ignore")
 
 
 headers = {
-  'Authorization': config["basic_auth"],
+  'Authorization':  base64encode(),
   'Content-Type': 'application/json'
 }
 
