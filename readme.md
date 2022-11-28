@@ -1,3 +1,6 @@
+This scripts automates the VRF creation for NSX multi-tenancy. The automation is based on the Oracle blog
+https://blogs.oracle.com/cloud-infrastructure/post/achieve-multitenancy-within-oracle-cloud-vmware-solution-using-vrf
+
 This script creates VRF gateways on existing NSX T0 gateways. The script will deploy VRF, configure them, create t1, transport zones , create vlan and overlay segments. 
 
 Populate the below files before running the script. 
